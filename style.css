@@ -1,0 +1,182 @@
+/* Configurações Gerais da Página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  flex-direction: column; /* Organiza calculadora e rodapé um embaixo do outro */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 0; /* Espaço em cima e embaixo */
+}
+
+/* Container Principal da Calculadora */
+.calculator-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Responsividade */
+  width: 90%; /* Ocupa 90% da tela em dispositivos móveis */
+  max-width: 500px; /* Trava em 500px em telas grandes */
+  box-sizing: border-box;
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  color: #0056b3;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+/* Grupos de Input (Labels e Selects/Inputs) */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.input-group select,
+.input-group input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Agrupamento das Datas (lado a lado) */
+.date-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Estilo do Checkbox de Meia Diária */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.checkbox-group input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+/* Botão Calcular */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+/* Área de Resultados */
+#resultado-container {
+  margin-top: 30px;
+  background-color: #e9f5ff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #b3d7ff;
+}
+
+#resultado-container h2 {
+  margin: 0 0 15px 0;
+  color: #0056b3;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid #b3d7ff;
+  padding-bottom: 10px;
+}
+
+/* Linhas de detalhe do resultado */
+.resultado-linha {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Linha de destaque (Total de dias) */
+.resultado-linha.destaque {
+  font-weight: bold;
+  color: #0056b3;
+  border-top: 1px dashed #b3d7ff;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+/* Bloco azul do valor final */
+.resultado-final {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #0056b3;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.resultado-final p {
+  margin: 0;
+}
+
+#res-valor-final {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Rodapé (Aviso Legal) */
+.disclaimer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  max-width: 500px;
+  padding: 0 20px;
+  line-height: 1.4;
+}
+
+.disclaimer strong {
+  color: #555;
+}
+
+/* Mídia Query para Celulares (Telas menores que 480px) */
+@media (max-width: 480px) {
+  .date-group {
+    flex-direction: column; /* Empilha as datas */
+    gap: 0;
+  }
+}

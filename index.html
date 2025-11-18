@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Diárias de Missão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="calculator-container">
+    <h1>Calculadora de Diárias</h1>
+
+    <div class="input-group">
+      <label for="posto">Círculo / Posto / Graduação:</label>
+      <select id="posto">
+        <option value="A">Comandantes e Cargos de Natureza Especial</option>
+        <option value="B">Oficiais-Generais</option>
+        <option value="C">Oficiais-Superiores</option>
+        <option value="D">Oficiais-Intermediários/Subalternos, Guardas-Marinha, Aspirantes</option>
+        <option value="E">Suboficiais, Subtenentes, Sargentos, Aspirantes e Cadetes</option>
+        <option value="F">Alunos (Formação de Oficiais, Colégio Naval, etc.)</option>
+        <option value="G">Demais Praças e Praças Especiais</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="localidade">Tipo de Deslocamento:</label>
+      <select id="localidade">
+        <option value="capital_principal">Brasília, Manaus, Rio de Janeiro, São Paulo</option>
+        <option value="outras_capitais">Outras Capitais de Estados</option>
+        <option value="demais_locais">Demais Deslocamentos</option>
+      </select>
+    </div>
+
+    <div class="date-group">
+      <div class="input-group">
+        <label for="data-inicio">Data de Início:</label>
+        <input type="date" id="data-inicio">
+      </div>
+
+      <div class="input-group">
+        <label for="data-termino">Data de Término:</label>
+        <input type="date" id="data-termino">
+      </div>
+    </div>
+
+    <div class="input-group checkbox-group">
+      <input type="checkbox" id="meia-diaria-check">
+      <label for="meia-diaria-check">Pagar apenas meia diária em todos os dias?</label>
+    </div>
+
+    <button id="calcular-btn">Calcular Valor</button>
+
+    <div id="resultado-container">
+      <h2>Detalhamento</h2>
+      <div class="resultado-linha">
+        <span>Valor da diária base:</span>
+        <span id="res-valor-base">R$ 0,00</span>
+      </div>
+      <div class="resultado-linha">
+        <span>Diárias completas:</span>
+        <span id="res-dias-completos">0</span>
+      </div>
+      <div class="resultado-linha">
+        <span>Meias diárias:</span>
+        <span id="res-meias-diarias">0</span>
+      </div>
+      <div class="resultado-linha destaque">
+        <span>Total de diárias a receber:</span>
+        <span id="res-total-diarias">0</span>
+      </div>
+
+      <div class="resultado-final">
+        <p>Valor Total a Receber</p>
+        <p id="res-valor-final">R$ 0,00</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="disclaimer">
+    <p>⚠️ <strong>Aviso:</strong> Este projeto foi desenvolvido para fins de estudo e teste. <br>
+      Os valores são estimativas e <strong>não possuem caráter oficial</strong>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
