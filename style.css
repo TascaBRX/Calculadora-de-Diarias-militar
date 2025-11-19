@@ -180,3 +180,16 @@ button:hover {
     gap: 0;
   }
 }
+
+/* Estilo para o link do decreto no rodapé */
+.disclaimer a {
+  color: #0056b3; /* Mantém o azul padrão do site */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.disclaimer a:hover {
+  color: #003d7a; /* Fica mais escuro quando passa o mouse */
+  text-decoration: underline; /* O sublinhado aparece ao passar o mouse */
+}
