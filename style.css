@@ -4,28 +4,25 @@ body {
   background-color: #f0f2f5;
   color: #333;
   display: flex;
-  flex-direction: column; /* Organiza calculadora e rodapé um embaixo do outro */
+  flex-direction: column; /* Importante para empilhar Calculadora -> FAQ -> Rodapé */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  padding: 20px 0; /* Espaço em cima e embaixo */
+  padding: 20px 0;
 }
 
-/* Container Principal da Calculadora */
+/* --- CALCULADORA --- */
 .calculator-container {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-  /* Responsividade */
-  width: 90%; /* Ocupa 90% da tela em dispositivos móveis */
-  max-width: 500px; /* Trava em 500px em telas grandes */
+  width: 90%;
+  max-width: 500px;
   box-sizing: border-box;
 }
 
-/* Títulos */
 h1 {
   text-align: center;
   color: #0056b3;
@@ -33,7 +30,6 @@ h1 {
   font-size: 1.5rem;
 }
 
-/* Grupos de Input (Labels e Selects/Inputs) */
 .input-group {
   margin-bottom: 20px;
 }
@@ -54,14 +50,13 @@ h1 {
   font-size: 1rem;
 }
 
-/* Agrupamento das Datas (lado a lado) */
 .date-group {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-/* Estilo do Checkbox de Meia Diária */
+/* Checkbox */
 .checkbox-group {
   display: flex;
   align-items: center;
@@ -84,7 +79,6 @@ h1 {
   font-weight: normal;
 }
 
-/* Botão Calcular */
 button {
   width: 100%;
   padding: 12px;
@@ -121,7 +115,6 @@ button:hover {
   padding-bottom: 10px;
 }
 
-/* Linhas de detalhe do resultado */
 .resultado-linha {
   display: flex;
   justify-content: space-between;
@@ -129,7 +122,6 @@ button:hover {
   font-size: 0.95rem;
 }
 
-/* Linha de destaque (Total de dias) */
 .resultado-linha.destaque {
   font-weight: bold;
   color: #0056b3;
@@ -138,7 +130,6 @@ button:hover {
   margin-top: 8px;
 }
 
-/* Bloco azul do valor final */
 .resultado-final {
   margin-top: 20px;
   text-align: center;
@@ -158,7 +149,70 @@ button:hover {
   margin-top: 5px;
 }
 
-/* Rodapé (Aviso Legal) */
+/* --- PERGUNTAS FREQUENTES (FAQ) --- */
+.faq-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.faq-container h2 {
+  text-align: center;
+  color: #0056b3;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #e9f5ff;
+  padding-bottom: 10px;
+}
+
+details {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+details:last-child {
+  border-bottom: none;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  list-style: none;
+  position: relative;
+  padding-right: 20px;
+}
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+details[open] summary::after {
+  content: "-";
+}
+
+summary:hover {
+  color: #0056b3;
+}
+
+details p {
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* --- RODAPÉ (DISCLAIMER) --- */
 .disclaimer {
   margin-top: 20px;
   text-align: center;
@@ -173,23 +227,23 @@ button:hover {
   color: #555;
 }
 
-/* Mídia Query para Celulares (Telas menores que 480px) */
-@media (max-width: 480px) {
-  .date-group {
-    flex-direction: column; /* Empilha as datas */
-    gap: 0;
-  }
-}
-
-/* Estilo para o link do decreto no rodapé */
+/* Link do rodapé */
 .disclaimer a {
-  color: #0056b3; /* Mantém o azul padrão do site */
-  text-decoration: none; /* Remove o sublinhado padrão */
+  color: #0056b3;
+  text-decoration: none;
   font-weight: bold;
   transition: color 0.2s;
 }
 
 .disclaimer a:hover {
-  color: #003d7a; /* Fica mais escuro quando passa o mouse */
-  text-decoration: underline; /* O sublinhado aparece ao passar o mouse */
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 480px) {
+  .date-group {
+    flex-direction: column;
+    gap: 0;
+  }
 }
